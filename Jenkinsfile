@@ -1,11 +1,13 @@
 pipeline {
     agent {
-        dockerfile true
+        docker {
+            image 'python:3.9.8-alpine3.14'
+        }
     }
     stages {
         stage('Build') {
             steps {
-                sh 'pipenv install -r requirements.txt'
+                sh 'pip install --no-cache-dir -r requirements.txt'
             }
         }
         stage('Test') {
