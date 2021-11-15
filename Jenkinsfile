@@ -12,8 +12,7 @@ pipeline {
         }
         stage('Test') {
             steps {
-                // chmod +x
-                sh 'pytest  --junitxml=reports/testReport.xml'
+                sh 'pytest --junitxml=reports/testReport.xml'
             }
         }
         stage('Publish') {
