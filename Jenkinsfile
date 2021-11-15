@@ -1,7 +1,7 @@
 pipeline {
     agent {
         docker {
-            image 'python:3.9.8-alpine3.14'
+            image 'python:3.9.8-slim-buster'
         }
     }
     stages {
