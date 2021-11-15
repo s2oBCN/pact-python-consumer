@@ -12,7 +12,7 @@ pipeline {
         }
         stage('Test') {
             steps {
-                sh 'pytest --junitxml=reports/testReport.xml'
+                sh script:'pytest --junitxml=reports/testReport.xml', returnStatus:false
             }
         }
         stage('Publish') {
